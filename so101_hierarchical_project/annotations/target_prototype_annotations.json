@@ -1,0 +1,20 @@
+{
+  "dataset_root": "/home/manashvi/.cache/huggingface/lerobot/so101_variable_box_40episodes",
+  "purpose": "Coarse visible-object polygons for an offline appearance prototype; not training labels.",
+  "samples": [
+    {
+      "camera": "phone",
+      "episode_index": 15,
+      "video": "videos/observation.images.phone/chunk-000/file-000.mp4",
+      "timestamp_s": 345.8216666666668,
+      "polygon_xy": [[711, 457], [859, 456], [892, 550], [713, 569]]
+    },
+    {
+      "camera": "wrist",
+      "episode_index": 15,
+      "video": "videos/observation.images.wrist/chunk-000/file-000.mp4",
+      "timestamp_s": 345.8216666666668,
+      "polygon_xy": [[586, 308], [744, 345], [713, 506], [554, 475]]
+    }
+  ]
+}

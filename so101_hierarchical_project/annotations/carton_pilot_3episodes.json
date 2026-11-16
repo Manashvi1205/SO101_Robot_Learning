@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "dataset_root": "/home/manashvi/.cache/huggingface/lerobot/so101_variable_box_40episodes",
+  "source_repo_id": "so101_variable_box_40episodes",
+  "derived_repo_id": "so101_variable_box_3ep_highlight_pilot",
+  "selected_source_episodes": [3, 20, 30],
+  "selection_rationale": {
+    "3": "right/far carton start",
+    "20": "center/near carton start",
+    "30": "left/near carton start"
+  },
+  "annotation_policy": "Human-reviewed coarse visible-carton polygons for a training compatibility pilot. Partial and occluded anchors are explicitly flagged; propagation is never ground truth.",
+  "episodes": {
+    "3": {
+      "phone": [
+        {"frame_index": 0, "phase": "approach", "visibility": "visible", "polygons_xy": [[[794, 416], [930, 412], [952, 534], [798, 544]]]},
+        {"frame_index": 190, "phase": "grasp", "visibility": "visible", "polygons_xy": [[[792, 424], [936, 423], [956, 540], [798, 550]]]},
+        {"frame_index": 230, "phase": "occlusion", "visibility": "partial", "polygons_xy": [[[798, 432], [939, 431], [955, 551], [801, 560]]]},
+        {"frame_index": 329, "phase": "transport", "visibility": "visible", "polygons_xy": [[[551, 437], [677, 432], [708, 568], [566, 601]]]},
+        {"frame_index": 461, "phase": "placement", "visibility": "partial", "polygons_xy": [[[440, 454], [570, 450], [590, 559], [443, 574]]]},
+        {"frame_index": 526, "phase": "release", "visibility": "visible", "polygons_xy": [[[438, 452], [572, 450], [589, 561], [441, 572]]]},
+        {"frame_index": 658, "phase": "terminal_review", "visibility": "visible", "polygons_xy": [[[434, 450], [580, 448], [592, 572], [434, 574]]]}
+      ],
+      "wrist": [
+        {"frame_index": 66, "phase": "approach", "visibility": "fully_occluded", "polygons_xy": []},
+        {"frame_index": 120, "phase": "approach_visible", "visibility": "partial", "polygons_xy": [[[680, 475], [805, 474], [821, 594], [691, 607]]]},
+        {"frame_index": 190, "phase": "grasp", "visibility": "visible", "polygons_xy": [[[593, 432], [785, 429], [802, 661], [596, 672]]]},
+        {"frame_index": 230, "phase": "occlusion", "visibility": "partial", "polygons_xy": [[[594, 211], [1134, 275], [1192, 560], [988, 707], [556, 624], [452, 451]]]},
+        {"frame_index": 329, "phase": "transport", "visibility": "partial", "polygons_xy": [[[600, 297], [1278, 302], [1278, 719], [641, 719]]]},
+        {"frame_index": 461, "phase": "placement", "visibility": "partial", "polygons_xy": [[[638, 376], [1026, 380], [1040, 710], [644, 697]]]},
+        {"frame_index": 526, "phase": "release", "visibility": "partial", "polygons_xy": [[[574, 494], [748, 495], [768, 700], [576, 693]]]},
+        {"frame_index": 658, "phase": "terminal_review", "visibility": "partial", "polygons_xy": [[[20, 35], [448, 35], [470, 335], [0, 315], [0, 70]]]}
+      ]
+    },
+    "20": {
+      "phone": [
+        {"frame_index": 0, "phase": "approach", "visibility": "visible", "polygons_xy": [[[493, 490], [710, 484], [727, 640], [490, 649]]]},
+        {"frame_index": 176, "phase": "grasp", "visibility": "partial", "polygons_xy": [[[491, 493], [711, 488], [727, 638], [493, 650]]]},
+        {"frame_index": 205, "phase": "occlusion", "visibility": "partial", "polygons_xy": [[[492, 494], [711, 490], [725, 642], [491, 651]]]},
+        {"frame_index": 294, "phase": "transport", "visibility": "partial", "polygons_xy": [[[490, 496], [704, 492], [719, 642], [493, 648]]]},
+        {"frame_index": 411, "phase": "placement", "visibility": "partial", "polygons_xy": [[[436, 450], [565, 450], [577, 585], [435, 586]]]},
+        {"frame_index": 470, "phase": "release", "visibility": "visible", "polygons_xy": [[[438, 451], [565, 450], [576, 584], [437, 586]]]},
+        {"frame_index": 587, "phase": "terminal_review", "visibility": "visible", "polygons_xy": [[[432, 448], [566, 448], [578, 586], [432, 588]]]}
+      ],
+      "wrist": [
+        {"frame_index": 59, "phase": "approach", "visibility": "visible", "polygons_xy": [[[637, 226], [704, 240], [754, 286], [749, 356], [696, 392], [610, 345], [599, 284]]]},
+        {"frame_index": 120, "phase": "approach_review", "visibility": "visible", "polygons_xy": [[[620, 290], [760, 284], [820, 380], [760, 520], [620, 480], [600, 370]]]},
+        {"frame_index": 176, "phase": "grasp", "visibility": "partial", "polygons_xy": [[[594, 211], [793, 226], [796, 446], [594, 432]]]},
+        {"frame_index": 205, "phase": "occlusion", "visibility": "partial", "polygons_xy": [[[584, 326], [1132, 354], [1237, 714], [598, 714]]]},
+        {"frame_index": 294, "phase": "transport", "visibility": "partial", "polygons_xy": [[[458, 194], [1278, 224], [1278, 719], [470, 719]]]},
+        {"frame_index": 411, "phase": "placement", "visibility": "partial", "polygons_xy": [[[608, 275], [1141, 296], [1198, 719], [618, 719]]]},
+        {"frame_index": 470, "phase": "release", "visibility": "partial", "polygons_xy": [[[594, 438], [789, 439], [799, 662], [596, 670]]]},
+        {"frame_index": 587, "phase": "terminal_review", "visibility": "partial", "polygons_xy": [[[177, 35], [697, 35], [678, 286], [575, 328], [132, 260]]]}
+      ]
+    },
+    "30": {
+      "phone": [
+        {"frame_index": 0, "phase": "approach", "visibility": "visible", "polygons_xy": [[[271, 429], [479, 426], [483, 621], [274, 625]]]},
+        {"frame_index": 148, "phase": "grasp", "visibility": "partial", "polygons_xy": [[[270, 428], [480, 426], [484, 620], [273, 624]]]},
+        {"frame_index": 178, "phase": "occlusion", "visibility": "partial", "polygons_xy": [[[271, 430], [479, 426], [484, 620], [273, 625]]]},
+        {"frame_index": 296, "phase": "transport", "visibility": "visible", "polygons_xy": [[[566, 432], [733, 426], [740, 632], [576, 635]]]},
+        {"frame_index": 415, "phase": "placement", "visibility": "partial", "polygons_xy": [[[496, 446], [657, 443], [664, 633], [496, 634]]]},
+        {"frame_index": 474, "phase": "release", "visibility": "visible", "polygons_xy": [[[495, 447], [657, 444], [664, 633], [495, 634]]]},
+        {"frame_index": 593, "phase": "terminal_review", "visibility": "visible", "polygons_xy": [[[494, 448], [660, 445], [666, 635], [494, 636]]]}
+      ],
+      "wrist": [
+        {"frame_index": 59, "phase": "approach", "visibility": "visible", "polygons_xy": [[[418, 215], [500, 208], [600, 270], [607, 334], [535, 395], [420, 316]]]},
+        {"frame_index": 148, "phase": "grasp", "visibility": "partial", "polygons_xy": [[[492, 270], [793, 274], [800, 526], [505, 530]]]},
+        {"frame_index": 178, "phase": "occlusion", "visibility": "partial", "polygons_xy": [[[488, 195], [1120, 219], [1192, 705], [495, 714]]]},
+        {"frame_index": 296, "phase": "transport", "visibility": "partial", "polygons_xy": [[[548, 153], [1278, 164], [1278, 719], [565, 719]]]},
+        {"frame_index": 415, "phase": "placement", "visibility": "partial", "polygons_xy": [[[548, 191], [1278, 201], [1278, 719], [562, 719]]]},
+        {"frame_index": 474, "phase": "release", "visibility": "partial", "polygons_xy": [[[588, 505], [761, 505], [780, 704], [591, 706]]]},
+        {"frame_index": 593, "phase": "terminal_review", "visibility": "partial", "polygons_xy": [[[280, 35], [808, 35], [770, 407], [430, 370], [200, 328]]]}
+      ]
+    }
+  }
+}

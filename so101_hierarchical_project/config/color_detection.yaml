@@ -1,0 +1,89 @@
+schema_version: "1.0"
+labels: [red, green, blue]
+cameras:
+  wrist:
+    algorithm: lab_color_shape_v2
+    # The new inspection pose exposes the upper workspace. The old ROI started at
+    # y=0.34 and discarded much of the box surface. This measured ROI excludes
+    # the left wood strip while retaining boxes at the image edges.
+    roi_polygon:
+      - [0.10, 0.00]
+      - [0.915, 0.00]
+      - [0.915, 0.985]
+      - [0.10, 0.985]
+    # Fixed wrist-view gripper silhouette. Removing it before contour extraction
+    # prevents dark blue/purple reflections from becoming blue candidates.
+    exclusion_polygons:
+      - [[0.39, 0.72], [0.512, 0.72], [0.55, 1.00], [0.328, 1.00]]
+    min_contour_area: 900.0
+    max_area_fraction: 0.09
+    min_bbox_width: 35
+    min_bbox_height: 25
+    max_bbox_width: 360
+    max_bbox_height: 360
+    min_rotated_rectangularity: 0.35
+    min_solidity: 0.50
+    morphology_kernel: 5
+    morphology_iterations: 1
+    close_kernel: 11
+    close_iterations: 2
+    review_score_threshold: 0.55
+    # These Lab bands come from polygons in annotations/wrist_color_tuning.json.
+    # Each color has a darker chromatic mode and a bright/pale-face mode.
+    lab_colors:
+      red:
+        ranges:
+          - {l_min: 45, l_max: 255, a_min: 160, a_max: 255, b_min: 110, b_max: 255}
+          - {l_min: 125, l_max: 255, a_min: 138, a_max: 255, b_min: 120, b_max: 255}
+      green:
+        ranges:
+          - {l_min: 45, l_max: 255, a_min: 0, a_max: 105, b_min: 110, b_max: 255}
+          - {l_min: 125, l_max: 255, a_min: 0, a_max: 120, b_min: 112, b_max: 255}
+      blue:
+        ranges:
+          - {l_min: 45, l_max: 255, a_min: 0, a_max: 255, b_min: 0, b_max: 85}
+          - {l_min: 130, l_max: 255, a_min: 0, a_max: 255, b_min: 0, b_max: 112}
+    colors:
+      red:
+        ranges:
+          - {h_min: 0, h_max: 12, s_min: 45, s_max: 255, v_min: 65, v_max: 255}
+          - {h_min: 160, h_max: 179, s_min: 35, s_max: 255, v_min: 65, v_max: 255}
+      green:
+        # Low saturation is intentional: the green box has a pale top face.
+        ranges:
+          - {h_min: 35, h_max: 88, s_min: 22, s_max: 255, v_min: 45, v_max: 255}
+      blue:
+        ranges:
+          # Pale bright top face, separated from the more saturated blue-gray mat.
+          - {h_min: 88, h_max: 125, s_min: 30, s_max: 85, v_min: 170, v_max: 255}
+          # Saturated side faces, including darker visible edges.
+          - {h_min: 92, h_max: 132, s_min: 100, s_max: 255, v_min: 60, v_max: 255}
+  external:
+    algorithm: hsv_legacy
+    # Low-angle workspace band; excludes ceiling, robot body, and most curtain.
+    roi_polygon:
+      - [0.10, 0.69]
+      - [0.90, 0.69]
+      - [0.90, 1.00]
+      - [0.10, 1.00]
+    min_contour_area: 650.0
+    max_area_fraction: 0.18
+    min_bbox_width: 10
+    min_bbox_height: 25
+    max_bbox_width: 300
+    max_bbox_height: 260
+    morphology_kernel: 9
+    morphology_iterations: 2
+    review_score_threshold: 0.55
+    colors:
+      red:
+        # The red box is pinkish under the current lighting.
+        ranges:
+          - {h_min: 0, h_max: 13, s_min: 38, s_max: 255, v_min: 55, v_max: 255}
+          - {h_min: 160, h_max: 179, s_min: 30, s_max: 255, v_min: 55, v_max: 255}
+      green:
+        ranges:
+          - {h_min: 35, h_max: 88, s_min: 30, s_max: 255, v_min: 40, v_max: 255}
+      blue:
+        ranges:
+          - {h_min: 88, h_max: 132, s_min: 70, s_max: 255, v_min: 60, v_max: 255}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "camera": "wrist",
+  "image_size": {"width": 1280, "height": 720},
+  "purpose": "color calibration only; held-out scenes are not included",
+  "tuning_scenes": ["scene_033", "scene_039", "scene_042", "scene_045"],
+  "regions": [
+    {"scene_id": "scene_033", "color": "red", "polygon": [[710, 81], [864, 80], [870, 240], [716, 239]]},
+    {"scene_id": "scene_033", "color": "green", "polygon": [[300, 80], [450, 75], [487, 255], [330, 270]]},
+    {"scene_id": "scene_033", "color": "blue", "polygon": [[1009, 169], [1133, 151], [1152, 263], [1017, 278]]},
+    {"scene_id": "scene_039", "color": "red", "polygon": [[815, 40], [950, 55], [947, 195], [810, 181]]},
+    {"scene_id": "scene_039", "color": "green", "polygon": [[792, 375], [935, 375], [936, 510], [793, 510]]},
+    {"scene_id": "scene_039", "color": "blue", "polygon": [[263, 171], [400, 118], [466, 259], [309, 307]]},
+    {"scene_id": "scene_042", "color": "red", "polygon": [[483, 10], [613, 0], [660, 129], [526, 161]]},
+    {"scene_id": "scene_042", "color": "green", "polygon": [[916, 531], [1052, 533], [1055, 660], [915, 670]]},
+    {"scene_id": "scene_042", "color": "blue", "polygon": [[888, 70], [1020, 96], [999, 235], [862, 211]]},
+    {"scene_id": "scene_045", "color": "red", "polygon": [[650, 420], [788, 397], [813, 533], [678, 556]]},
+    {"scene_id": "scene_045", "color": "green", "polygon": [[596, 5], [743, 5], [735, 125], [588, 125]]},
+    {"scene_id": "scene_045", "color": "blue", "polygon": [[888, 70], [1020, 96], [999, 235], [862, 211]]}
+  ]
+}

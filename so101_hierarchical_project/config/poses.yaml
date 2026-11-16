@@ -1,0 +1,51 @@
+schema_version: "1.0"
+robot_type: so101_follower
+representation:
+  arm_joints: calibrated_degrees
+  gripper: calibrated_range_0_100
+# Recent ACM1 teleoperation and recording commands omit --robot.id, so LeRobot
+# resolves this follower's calibration to None.json. Do not rename or edit it.
+calibration_file: /home/manashvi/.cache/huggingface/lerobot/calibration/robots/so_follower/None.json
+source: teleoperation_screenshot_transcription
+provisional: true
+control:
+  rate_hz: 30.0
+  minimum_duration_s: 1.0
+  screenshot_rounding_tolerance: 0.005
+  start_tolerance:
+    arm_degrees: 5.0
+    gripper_units: 5.0
+  max_velocity:
+    shoulder_pan.pos: 20.0
+    shoulder_lift.pos: 20.0
+    elbow_flex.pos: 20.0
+    wrist_flex.pos: 20.0
+    wrist_roll.pos: 25.0
+    gripper.pos: 20.0
+poses:
+  home:
+    verified_from_follower_measurement: false
+    joints:
+      shoulder_pan.pos: -5.54
+      shoulder_lift.pos: -102.24
+      elbow_flex.pos: 89.93
+      wrist_flex.pos: 75.74
+      wrist_roll.pos: -9.89
+      gripper.pos: 2.25
+  inspection:
+    verified_from_follower_measurement: false
+    joints:
+      shoulder_pan.pos: -4.66
+      shoulder_lift.pos: -41.41
+      elbow_flex.pos: 5.89
+      wrist_flex.pos: 100.18
+      wrist_roll.pos: -7.43
+      gripper.pos: 2.25
+transitions:
+  go_home:
+    target: home
+    allowed_start_poses: [home, inspection]
+  go_inspection:
+    target: inspection
+    allowed_start_poses: [home, inspection]
+

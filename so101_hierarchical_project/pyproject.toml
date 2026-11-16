@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "so101-hierarchical"
+version = "0.2.0"
+description = "Hardware-safe hierarchical planning and ACT skill interfaces for SO-101 research"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+llm = ["openai>=1.0"]
+test = ["pytest>=8"]
+
+[project.scripts]
+so101-hierarchical = "so101_hierarchical.cli:main"
+so101-collect-images = "so101_hierarchical.collect_images:main"
+so101-evaluate-colors = "so101_hierarchical.color_detection:main"
+so101-camera-settings = "so101_hierarchical.camera_settings:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

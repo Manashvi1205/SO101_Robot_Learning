@@ -1,0 +1,20 @@
+schema_version: "1.0"
+cameras:
+  wrist:
+    device_name_contains: "USB2.0_CAM1"
+    v4l2_settings_file: "../camera_tuning/wrist_20261115_165351.json"
+    width: 1280
+    height: 720
+    fps: 30
+    fourcc: MJPG
+    preview_name: "Wrist Camera"
+  external:
+    # Despite the V4L2 card label, this is the user's phone stream supplied by DroidCam.
+    device_name_contains: "Iriun Webcam"
+    source_description: "phone_droidcam_stream_via_iriun_v4l2loopback"
+    width: 1280
+    height: 720
+    fps: 30
+    fourcc: YUYV
+    preview_name: "External Camera"
+

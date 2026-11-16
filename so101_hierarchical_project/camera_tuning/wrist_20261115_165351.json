@@ -1,0 +1,29 @@
+{
+  "camera": "/dev/video3",
+  "requested": {
+    "white_balance_automatic": 1,
+    "auto_exposure": 3,
+    "brightness": -64,
+    "contrast": 27,
+    "saturation": 114,
+    "gamma": 125,
+    "gain": 0,
+    "sharpness": 3,
+    "white_balance_temperature": 3322,
+    "exposure_time_absolute": 157
+  },
+  "readback": {
+    "white_balance_automatic": 1,
+    "auto_exposure": 3,
+    "brightness": -64,
+    "contrast": 27,
+    "saturation": 114,
+    "gamma": 125,
+    "gain": 0,
+    "sharpness": 3,
+    "white_balance_temperature": 3351,
+    "exposure_time_absolute": 157
+  },
+  "timestamp": "20261115_165351",
+  "image": "camera_tuning/wrist_20261115_165351.png"
+}
