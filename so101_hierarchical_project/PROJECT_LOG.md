@@ -6,7 +6,7 @@ it before finishing substantive work. Entries preserve completed work,
 decisions, verification, failures, safety impact, blockers, and next steps; they
 are not a verbatim transcript of conversations.
 
-## 2026-11-15 — Day 1
+## Day 1
 
 Implemented:
 
@@ -49,7 +49,7 @@ Open items / blockers:
 - Live execution, perception, visual verification, and recovery remain intentionally
   disabled until Day 2 and explicit hardware approval.
 
-## 2026-11-15 — Provisional named poses
+## Provisional named poses
 
 Implemented:
 
@@ -95,7 +95,7 @@ Validation after replacement:
   at 30 Hz, execution unauthorized.
 - No hardware was accessed.
 
-## 2026-11-15 — Paired perception image collection
+## Paired perception image collection
 
 Implemented:
 
@@ -166,7 +166,7 @@ Post-correction validation:
   metadata; the `quit` command shut down both streams cleanly with exit code 0.
 - No robot connection or motor command occurred.
 
-## 2026-11-15 — Guarded inspection-hold workflow
+## Guarded inspection-hold workflow
 
 The user identified `/dev/ttyACM1` as the follower and requested the sequence:
 validate HOME, move to INSPECTION, hold position, then wait for `capture`.
@@ -221,7 +221,7 @@ and explicit provisional-target acceptance. It requires the exact phrase
 `MOVE VIA HOME TO PROVISIONAL INSPECTION`; arbitrary states remain rejected.
 Implementation tests use a fake follower only.
 
-## 2026-11-15 — Initial colored-box perception baseline
+## Initial colored-box perception baseline
 
 Implemented configurable per-camera HSV segmentation for red, green, and blue
 boxes, including workspace ROIs, multiple ranges per color, morphology, contour
@@ -249,7 +249,7 @@ an image. Camera-only saving is also refused by default because pose cannot be
 validated; its explicit diagnostic override records that validation was
 unavailable. Existing scenes were not modified.
 
-## 2026-11-15 — Persistent wrist-camera tuning
+## Persistent wrist-camera tuning
 
 Located `camera_tuning/wrist_20261115_165351.json` and integrated it only with
 the logical wrist stream. The reusable loader applies automatic white balance
@@ -268,7 +268,7 @@ full reopen test was blocked because the user's `tune_wrist_camera.py` process
 reopen command can be run after quitting the tuner. No robot, external-camera
 control, dataset, checkpoint, or calibration was changed.
 
-## 2026-11-15 — Updated inspection pose for the next photo batch
+## Updated inspection pose for the next photo batch
 
 Replaced only the provisional INSPECTION target with the user-provided calibrated
 values `[-4.66, -41.41, 5.89, 100.18, -7.43, 2.25]` in driver joint order.
@@ -278,7 +278,7 @@ this pose, automatically applies the saved wrist V4L2 settings, leaves the
 external camera controls unchanged, validates INSPECTION before each capture,
 and continues scene numbering without overwriting prior images.
 
-## 2026-11-15 — Colored-box evaluation for scenes 033–061
+## Colored-box evaluation for scenes 033–061
 
 Processed exactly 29 paired scenes, 033 through 061, offline into
 `outputs/perception_eval_scenes_033_061`. Existing images and previous derived
@@ -295,7 +295,7 @@ wrist-blue detections fall on the gripper or nearby background, while the actual
 blue box is missed in every scene. These reviewed results are recorded separately
 in `manual_review.json`; no HSV thresholds were retuned during this evaluation.
 
-## 2026-11-15 — Wrist detector v2 diagnosis and repair
+## Wrist detector v2 diagnosis and repair
 
 Diagnosed the failed wrist masks using polygon annotations from tuning scenes
 033, 039, 042, and 045. The old ROI discarded most upper-workspace pixels (only
@@ -318,7 +318,7 @@ visual physical-object localization counts rather than IoU metrics. All 58 unit
 tests pass. No robot, camera control, calibration, source image, ACT checkpoint,
 or dataset was modified.
 
-## 2026-11-15 — Automatic cross-chat project memory
+## Automatic cross-chat project memory
 
 Added a root-level `AGENTS.md` covering the entire workspace. It establishes
 this file as the single canonical project record and instructs future agents to
@@ -332,7 +332,7 @@ secrets must never be recorded. The existing chronological history was retained
 unchanged; no source code, dataset, checkpoint, calibration, generated output,
 camera, or robot was modified or accessed for this documentation change.
 
-## 2026-11-15 — Modular language-to-skill pipeline
+## Modular language-to-skill pipeline
 
 Implemented the requested next-stage hierarchical pipeline in the existing
 `so101_hierarchical_project` rather than creating a new project.
@@ -411,7 +411,7 @@ Safety and remaining work:
   stacking require new demonstrations/policies and validation; pixel centers
   must not be treated as robot coordinates.
 
-## 2026-11-15 — ACT target highlighting and appearance-augmentation feasibility
+## ACT target highlighting and appearance-augmentation feasibility
 
 Audited the live `so101_variable_box_40episodes` dataset and variable-box ACT
 checkpoint before designing the no-new-demonstration experiment. The source
@@ -460,7 +460,7 @@ occlusion, transport, and placement; build short derived video clips; then run
 only the one-batch/one-step save-reload compatibility smoke test before choosing
 an expensive training budget.
 
-## 2026-11-15 — Three-episode highlighted ACT training pilot
+## Three-episode highlighted ACT training pilot
 
 Selected source episodes 3, 20, and 30 after reviewing all 40 start frames; they
 represent right/far, center/near, and left/near carton starts. Added a compact
@@ -520,7 +520,7 @@ Next step: correct all pending/flagged wrist intervals, then scale annotation
 and derivation to all 40 episodes. Re-run only a one-step A1/B/C compatibility
 check with matched preprocessing before choosing any full training budget.
 
-## 2026-11-16 — Corrected three-episode A/B datasets prepared
+## Corrected three-episode A/B datasets prepared
 
 Continued only the existing source episodes 3, 20, and 30; none of the other 37
 episodes were processed. Added seven review anchors: terminal phone/wrist
@@ -567,7 +567,7 @@ Next step: manually review/correct the remaining 210 low-confidence frames,
 especially wrist occlusion/late-release intervals, or explicitly accept that
 annotation noise as a pilot limitation before running the matched A/B commands.
 
-## 2026-11-16 — Nine new multibox demonstrations audited and A/B review datasets built
+## Nine new multibox demonstrations audited and A/B review datasets built
 
 Audited exactly the nine new local roots `arr1/arr2/arr3 × red/blue/green` under
 `local/`; no older dataset episodes were processed. Every root has one episode,
@@ -614,7 +614,7 @@ Next step: add reviewed wrist anchors at phase/visibility transitions, propagate
 between them, review fallback/empty boundaries, and rebuild only B; then rerun
 the exact equality/decode audit before considering a matched training run.
 
-## 2026-11-16 — Multibox wrist masks conservatively corrected and B regenerated
+## Multibox wrist masks conservatively corrected and B regenerated
 
 Continued from the nine-episode A/B audit without changing phone-only behavior:
 the target cue remains available in both cameras whenever the selected object is
@@ -664,36 +664,4 @@ No training was started. No source dataset, 40-episode dataset, checkpoint, or
 calibration was modified. No camera or serial device was opened, no robot was
 connected, and no motor command was sent.
 
-## 2026-11-16 — GitHub source-code publication handoff
-
-Prepared a user-run Git workflow for publishing the important hierarchical
-project source into `Manashvi1205/SO101_Robot_Learning` without having the agent
-commit or push. Verified read-only that the remote repository exists, its
-default branch is `main`, and its existing commit author is `Manashvi Garg
-<170458704+Manashvi1205@users.noreply.github.com>`. The local LeRobot cache root
-and `so101_hierarchical_project` are not currently Git repositories.
-
-The publication scope is source, tests, configuration, annotations, the wrist
-camera settings JSON, documentation, and this project log. The proposed
-project-local `.gitignore` excludes raw/derived data, generated outputs, logs,
-checkpoints, camera screenshots, caches, environments, and secrets. The local
-project currently contains about 115 MB under `data/` and 1.4 GB under
-`outputs/`, including model/optimizer files over GitHub's normal file-size
-limit, so those artifacts must not be added by the source-code commit. No remote
-write, commit, push, robot access, camera access, or motor command occurred.
-
-### Publication command recovery
-
-The user cloned the remote into `/home/manashvi/SO101_Robot_Learning` and staged
-the intended source-only project tree. A visually mangled terminal paste did not
-damage the result: all intended source, test, config, annotation, documentation,
-camera-settings JSON, and tuning-script files are present, and the project-local
-`.gitignore` correctly excludes generated/heavy content. No new file over 50 MB
-was staged. The initial test command used the base Python 3.14 environment, which
-does not have pytest, so it stopped with `No module named pytest`; this was an
-environment-selection issue, not a test failure. Re-running from the existing
-`lerobot` Conda environment passed all 81 tests in 1.66 seconds. Git's blank-line
-messages were whitespace warnings only, and the user had entered the diff pager
-before commit/push commands could run. At this point no commit or remote push had
-occurred. No robot, serial device, camera, or motor command was accessed.
 
