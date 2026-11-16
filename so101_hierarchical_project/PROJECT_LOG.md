@@ -682,3 +682,18 @@ project currently contains about 115 MB under `data/` and 1.4 GB under
 limit, so those artifacts must not be added by the source-code commit. No remote
 write, commit, push, robot access, camera access, or motor command occurred.
 
+### Publication command recovery
+
+The user cloned the remote into `/home/manashvi/SO101_Robot_Learning` and staged
+the intended source-only project tree. A visually mangled terminal paste did not
+damage the result: all intended source, test, config, annotation, documentation,
+camera-settings JSON, and tuning-script files are present, and the project-local
+`.gitignore` correctly excludes generated/heavy content. No new file over 50 MB
+was staged. The initial test command used the base Python 3.14 environment, which
+does not have pytest, so it stopped with `No module named pytest`; this was an
+environment-selection issue, not a test failure. Re-running from the existing
+`lerobot` Conda environment passed all 81 tests in 1.66 seconds. Git's blank-line
+messages were whitespace warnings only, and the user had entered the diff pager
+before commit/push commands could run. At this point no commit or remote push had
+occurred. No robot, serial device, camera, or motor command was accessed.
+
